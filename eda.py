@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def plot_histogram(data, title='Distribution', xlabel='Value', ylabel='Count',
-                   figsize=(10, 6), rotation=0, color='#4C72B0', bins=30):
+                   figsize=(10, 6), rotation=0, color='#073763ff', bins=30):
 
     fig, ax = plt.subplots(figsize=figsize)
 
