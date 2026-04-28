@@ -31,12 +31,10 @@ def param_search(X, y, pipline, param_grid, scoring, k_fold, verbose=4):
     print(scoring, str(grid_search.best_score_))
 
     best_score = grid_search.best_score_
-    best_model = grid_search.best_estimator_
+    best_pipe = grid_search.best_estimator_
 
-    selector = best_model.named_steps["select"]
-    features_selected = X.columns[selector.get_support()]
-
-    best_model = model.named_steps["model"]
-    best_params = best_model.get_params()
+    selector = best_pipe.named_steps["select"]
+    best_features = X.columns[selector.get_support()]
+    best_model_params = best_pipe.named_steps["model"].get_params()
     
-    return features_selected, best_params
+    return best_features, best_model_params
