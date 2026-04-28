@@ -34,7 +34,7 @@ def param_search(X, y, pipline, param_grid, scoring, k_fold, verbose=4):
     best_model = grid_search.best_estimator_
 
     selector = best_model.named_steps["select"]
-    features_selected = X_train.columns[selector.get_support()]
+    features_selected = X.columns[selector.get_support()]
 
     best_model = model.named_steps["model"]
     best_params = best_model.get_params()
